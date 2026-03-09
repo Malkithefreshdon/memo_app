@@ -5,9 +5,9 @@ import type { RssiEntry, BeaconConfig } from '~/types'
  * Mettre à jour beacon_id avec les vraies adresses MAC / IDs de tes balises.
  */
 export const BEACONS: BeaconConfig[] = [
-  { beacon_id: 'beacon_chambre1', room: 'chambre1', description: 'Balise Chambre 1' },
-  { beacon_id: 'beacon_chambre2', room: 'chambre2', description: 'Balise Chambre 2' },
-  { beacon_id: 'beacon_chambre3', room: 'chambre3', description: 'Balise Chambre 3' },
+  { beacon_id: 'beacon_chambre_malcom', room: 'chambre1', description: 'Balise Chambre 1' },
+  { beacon_id: 'beacon_chambre_alexander', room: 'chambre2', description: 'Balise Chambre 2' },
+  { beacon_id: 'beacon_chambre_adeline', room: 'chambre3', description: 'Balise Chambre 3' },
   { beacon_id: 'beacon_couloir', room: 'couloir', description: 'Balise Couloir' },
 ]
 
