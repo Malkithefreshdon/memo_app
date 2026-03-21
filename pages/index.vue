@@ -151,6 +151,11 @@ onUnmounted(() => clearInterval(tickInterval))
           </ul>
         </details>
       </section>
+
+      <!-- Device Manager -->
+      <section class="device-section">
+        <DeviceManager />
+      </section>
     </main>
   </div>
 </template>

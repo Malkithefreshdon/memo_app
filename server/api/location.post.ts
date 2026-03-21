@@ -1,4 +1,5 @@
 import { estimateRoom } from '~/server/utils/rssi'
+import { registerDevice } from '~/server/utils/storage'
 import { emitLocationUpdate } from '~/server/utils/sse-bus'
 import type { GatewayPayload, LocationEvent } from '~/types'
 
@@ -13,9 +14,9 @@ import type { GatewayPayload, LocationEvent } from '~/types'
  *   "watch_id": "watch_001",
  *   "timestamp": 1712345678000,
  *   "rssi_data": [
- *     { "beacon_id": "beacon_chambre1", "rssi": -55 },
- *     { "beacon_id": "beacon_chambre2", "rssi": -82 },
- *     { "beacon_id": "beacon_chambre3", "rssi": -91 }
+ *     { "beacon_id": "beacon_1_1", "major": 1, "minor": 1, "rssi": -55 },
+ *     { "beacon_id": "beacon_1_2", "major": 1, "minor": 2, "rssi": -82 },
+ *     { "beacon_id": "beacon_1_3", "major": 1, "minor": 3, "rssi": -91 }
  *   ]
  * }
  */
@@ -48,9 +49,20 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  // ── Auto-Discovery & Inscription State ─────────────────────────────────────
+  const now = body.timestamp ?? Date.now()
+  if (body.gateway_id) {
+    await registerDevice('gateway', body.gateway_id, now)
+  }
+  await registerDevice('watch', body.watch_id, now)
+
+  for (const b of body.rssi_data) {
+    await registerDevice('beacon', b.beacon_id, now)
+  }
+
   // ── Estimation de la pièce ───────────────────────────────────────────────
   // Si le gateway envoie déjà son estimation → on la respecte,
-  // sinon on calcule via notre algo RSSI
+  // sinon on calcule via notre algo RSSI en utilisant la config DB
   let room: string
   let confidence: number
 
@@ -58,7 +70,8 @@ export default defineEventHandler(async (event) => {
     room = body.estimated_room
     confidence = 1.0 // Le gateway est certain (il a fait son propre algo)
   } else {
-    const result = estimateRoom(body.rssi_data)
+    // Calcul de l'estimation basé sur les beacons configurés via UI
+    const result = await estimateRoom(body.rssi_data)
     room = result.room
     confidence = result.confidence
   }
