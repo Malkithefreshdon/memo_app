@@ -30,6 +30,3 @@ Thumbs.db
 *.local
 .nitro/
 .cache/
-
-# Netlify
-.netlify/
