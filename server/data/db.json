@@ -4,7 +4,7 @@
       "id": "watch_001",
       "type": "watch",
       "name": "Montre NrfDK",
-      "lastSeen": 1774111158565
+      "lastSeen": 1775822656365
     }
   },
   "beacons": {
@@ -12,21 +12,21 @@
       "id": "beacon_1_101",
       "type": "beacon",
       "name": "BALISE_1",
-      "lastSeen": 1774111158565,
+      "lastSeen": 1775822656365,
       "room": "chambre1"
     },
     "beacon_1_103": {
       "id": "beacon_1_103",
       "type": "beacon",
       "name": "BALISE_3",
-      "lastSeen": 1774111158565,
+      "lastSeen": 1775822656365,
       "room": "chambre3"
     },
     "beacon_1_102": {
       "id": "beacon_1_102",
       "type": "beacon",
       "name": "BALISE_2",
-      "lastSeen": 1774111158565,
+      "lastSeen": 1775822656365,
       "room": "chambre2"
     }
   },
@@ -35,7 +35,7 @@
       "id": "gateway_001_100",
       "type": "gateway",
       "name": "RPI DEV",
-      "lastSeen": 1774111158565
+      "lastSeen": 1775822656365
     }
   }
 }
