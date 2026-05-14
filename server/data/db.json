@@ -4,7 +4,7 @@
       "id": "watch_001",
       "type": "watch",
       "name": "Montre NrfDK",
-      "lastSeen": 1775822656365
+      "lastSeen": 1778361378482
     }
   },
   "beacons": {
@@ -28,6 +28,13 @@
       "name": "BALISE_2",
       "lastSeen": 1775822656365,
       "room": "chambre2"
+    },
+    "beacon_0_22857": {
+      "id": "beacon_0_22857",
+      "type": "beacon",
+      "name": "New Beacon (beacon_0_22857)",
+      "lastSeen": 1778361378482,
+      "room": null
     }
   },
   "gateways": {
@@ -35,7 +42,174 @@
       "id": "gateway_001_100",
       "type": "gateway",
       "name": "RPI DEV",
-      "lastSeen": 1775822656365
+      "lastSeen": 1778361378482
     }
-  }
+  },
+  "patients": {
+    "p1": {
+      "id": "p1",
+      "nom": "Moreau",
+      "prenom": "Henri",
+      "chambre": "101",
+      "age": 84,
+      "unite": "Unité Alzheimer",
+      "dateNaissance": "14 Juin 1941",
+      "contactUrgence": "Lucie Moreau (Fille) • +33 6 12 34 56 78",
+      "allergies": ["Pénicilline", "Aspirine"],
+      "pathologies": ["Maladie d'Alzheimer", "Chutes fréquentes"],
+      "watchId": "watch_001",
+      "authorizedZones": ["Chambre 101", "Hall", "Salle à manger"],
+      "humeur": "Calme",
+      "medications": [
+        { "nom": "Donépézil",   "dosage": "10 mg",  "horaire": "21:00 — Avant le coucher", "couleur": "#C8185A" },
+        { "nom": "Risperidone", "dosage": "0.5 mg", "horaire": "12:00 — Avec repas",        "couleur": "#8B5CF6" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    },
+    "p2": {
+      "id": "p2",
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "chambre": "104",
+      "age": 78,
+      "unite": "Unité Alzheimer",
+      "dateNaissance": "02 Juillet 1946",
+      "contactUrgence": "Marie Dupont (Fille) • +33 6 51 34 56 19",
+      "allergies": ["Ibuprofène", "Latex"],
+      "pathologies": ["Maladie d'Alzheimer", "Chutes fréquentes", "Dépression"],
+      "watchId": null,
+      "authorizedZones": ["Chambre 104", "Hall", "Couloir A", "Salle à manger"],
+      "humeur": "Calme",
+      "medications": [
+        { "nom": "Aspirine",   "dosage": "100 mg", "horaire": "08:00 — Avec le petit-déjeuner", "couleur": "#EF4444" },
+        { "nom": "Donépézil", "dosage": "5 mg",   "horaire": "21:00 — Avant le coucher",        "couleur": "#C8185A" },
+        { "nom": "Mémantine", "dosage": "10 mg",  "horaire": "12:00 — Midi avec repas",          "couleur": "#8B5CF6" },
+        { "nom": "Lorazépam", "dosage": "1 mg",   "horaire": "20:00 — Si agitation",             "couleur": "#F59E0B" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    },
+    "p3": {
+      "id": "p3",
+      "nom": "Renard",
+      "prenom": "Paul",
+      "chambre": "106",
+      "age": 81,
+      "unite": "Unité Alzheimer",
+      "dateNaissance": "23 Mars 1943",
+      "contactUrgence": "Pierre Renard (Fils) • +33 6 78 90 12 34",
+      "allergies": [],
+      "pathologies": ["Maladie d'Alzheimer", "Hypertension"],
+      "watchId": null,
+      "authorizedZones": ["Chambre 106", "Hall"],
+      "humeur": "Serein",
+      "medications": [
+        { "nom": "Donépézil",   "dosage": "5 mg",   "horaire": "21:00 — Avant le coucher", "couleur": "#C8185A" },
+        { "nom": "Paracétamol", "dosage": "500 mg", "horaire": "08:00 — Si douleur",         "couleur": "#F59E0B" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    },
+    "p4": {
+      "id": "p4",
+      "nom": "Bernard",
+      "prenom": "Simone",
+      "chambre": "108",
+      "age": 76,
+      "unite": "Unité protégée",
+      "dateNaissance": "05 Novembre 1948",
+      "contactUrgence": "Jacques Bernard (Mari) • +33 6 45 67 89 01",
+      "allergies": ["Pénicilline"],
+      "pathologies": ["Démence vasculaire", "Diabète"],
+      "watchId": null,
+      "authorizedZones": ["Chambre 108", "Hall", "Jardin", "Salle à manger"],
+      "humeur": "Stressée",
+      "medications": [
+        { "nom": "Donépézil",   "dosage": "5 mg",   "horaire": "21:00 — Avant le coucher", "couleur": "#C8185A" },
+        { "nom": "Paracétamol", "dosage": "500 mg", "horaire": "08:00 — Si douleur",         "couleur": "#F59E0B" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    },
+    "p5": {
+      "id": "p5",
+      "nom": "Lefebvre",
+      "prenom": "Marc",
+      "chambre": "102",
+      "age": 82,
+      "unite": "Unité Alzheimer",
+      "dateNaissance": "17 Août 1942",
+      "contactUrgence": "Sophie Lefebvre (Fille) • +33 6 23 45 67 89",
+      "allergies": [],
+      "pathologies": ["Maladie d'Alzheimer"],
+      "watchId": null,
+      "authorizedZones": ["Chambre 102", "Hall", "Salle à manger"],
+      "humeur": "Calme",
+      "medications": [
+        { "nom": "Donépézil",   "dosage": "5 mg",   "horaire": "21:00 — Avant le coucher", "couleur": "#C8185A" },
+        { "nom": "Paracétamol", "dosage": "500 mg", "horaire": "08:00 — Si douleur",         "couleur": "#F59E0B" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    },
+    "p6": {
+      "id": "p6",
+      "nom": "Fontaine",
+      "prenom": "Claire",
+      "chambre": "110",
+      "age": 79,
+      "unite": "Unité Alzheimer",
+      "dateNaissance": "29 Janvier 1946",
+      "contactUrgence": "Nathalie Fontaine (Fille) • +33 6 34 56 78 90",
+      "allergies": ["Latex"],
+      "pathologies": ["Maladie d'Alzheimer", "Arthrose"],
+      "watchId": null,
+      "authorizedZones": ["Chambre 110", "Hall", "Jardin", "Salle à manger"],
+      "humeur": "Joyeuse",
+      "medications": [
+        { "nom": "Donépézil",   "dosage": "5 mg",   "horaire": "21:00 — Avant le coucher", "couleur": "#C8185A" },
+        { "nom": "Paracétamol", "dosage": "500 mg", "horaire": "08:00 — Si douleur",         "couleur": "#F59E0B" }
+      ],
+      "schedule": [
+        { "id": "s1", "titre": "Petit-déjeuner",    "heureDebut": "08:00", "heureFin": "08:30", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s2", "titre": "Médicaments matin", "heureDebut": "09:00",                       "couleur": "#F44336", "icone": "medicament" },
+        { "id": "s3", "titre": "Kinésithérapie",    "heureDebut": "10:30", "heureFin": "11:30", "couleur": "#2196F3", "icone": "kine"       },
+        { "id": "s4", "titre": "Déjeuner",          "heureDebut": "12:00", "heureFin": "13:00", "couleur": "#FF9800", "icone": "repas"      },
+        { "id": "s5", "titre": "Toilette",          "heureDebut": "14:30",                       "couleur": "#4CAF50", "icone": "toilette"   },
+        { "id": "s6", "titre": "Médicaments soir",  "heureDebut": "20:00",                       "couleur": "#F44336", "icone": "medicament" }
+      ]
+    }
+  },
+  "alerts": []
 }

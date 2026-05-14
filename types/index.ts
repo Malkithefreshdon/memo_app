@@ -3,31 +3,81 @@
 export interface DeviceEntity {
   id: string
   type: 'watch' | 'beacon' | 'gateway'
-  name: string // Nom configuré par l'utilisateur
-  room?: string | null // Pour les balises: la pièce à laquelle elle est assignée
-  lastSeen: number // Timestamp Unix ms
+  name: string
+  room?: string | null
+  lastSeen: number
 }
+
+// ── Patients ─────────────────────────────────────────────────
+
+export interface MedicationEntity {
+  nom: string
+  dosage: string
+  horaire: string
+  couleur: string
+}
+
+export interface ScheduleItemEntity {
+  id: string
+  titre: string
+  heureDebut: string
+  heureFin?: string
+  couleur: string
+  icone: string
+}
+
+export interface PatientEntity {
+  id: string
+  nom: string
+  prenom: string
+  chambre: string
+  age: number
+  unite: string
+  dateNaissance: string
+  contactUrgence: string
+  allergies: string[]
+  pathologies: string[]
+  watchId: string | null
+  authorizedZones: string[]
+  humeur: string
+  medications: MedicationEntity[]
+  schedule: ScheduleItemEntity[]
+}
+
+export interface AlertEntity {
+  id: string
+  patientId: string
+  patientNom: string
+  type: 'fall' | 'heart_rate' | 'zone_exit'
+  message: string
+  lu: boolean
+  createdAt: number // Unix ms
+}
+
+// ── AppState (db.json) ────────────────────────────────────────
 
 export interface AppState {
   watches: Record<string, DeviceEntity>
   beacons: Record<string, DeviceEntity>
   gateways: Record<string, DeviceEntity>
+  patients: Record<string, PatientEntity>
+  alerts: AlertEntity[]
 }
+
+// ── Gateway / SSE ─────────────────────────────────────────────
 
 export interface RssiEntry {
   beacon_id: string
   major?: number
   minor?: number
-  rssi: number // négatif, ex: -55. Plus proche de 0 = plus fort = plus proche
+  rssi: number
 }
 
 export interface GatewayPayload {
   gateway_id: string
   watch_id: string
-  timestamp: number // Unix ms
+  timestamp: number
   rssi_data: RssiEntry[]
-  // estimated_room peut être envoyé par le gateway si il veut faire son propre calcul,
-  // sinon l'API le calcule via les rssi_data
   estimated_room?: string
 }
 
@@ -35,6 +85,6 @@ export interface LocationEvent {
   watch_id: string
   room: string
   timestamp: number
-  confidence: number // 0-1, basé sur l'écart RSSI entre le meilleur et le second beacon
+  confidence: number
   rssi_data: RssiEntry[]
 }
